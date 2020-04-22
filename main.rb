@@ -15,7 +15,7 @@ def my_each_with_index
 end
 
 def my_select
-    array = []
+  array = []
     my_each { |i| array << i if yield(i) }
-    array  
+    array
 end
