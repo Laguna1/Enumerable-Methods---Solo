@@ -1,21 +1,28 @@
 def my_each
-  index = 0
-    while index < length
-      yield(self[index])
-      index += 1
-    end
+    return to_enum unless block_given?
+
+    index = 0
+      while index < length
+        yield(self[index])
+        index += 1
+      end
 end
 
 def my_each_with_index
-  index = 0
-    while index < length
-      yield([index], index)
-      index += 1
-    end
+    return to_enum unless block_given?
+
+    index = 0
+      while index < length
+        yield([index], index)
+        index += 1
+      end
 end
 
 def my_select
-  array = []
-    my_each { |i| array << i if yield(i) }
+    return to_enum unless block_given?
+
+    array = []
+    my_each { |i| array.push(i) if yield(i) }
     array
 end
+
