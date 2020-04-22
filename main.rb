@@ -8,7 +8,7 @@ end
 
 def my_each_with_index
   index = 0
-    while element in self
+    while index < self.length
       yield([index], index)
         index += 1
     end
