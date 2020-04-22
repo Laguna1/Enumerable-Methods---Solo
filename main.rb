@@ -15,11 +15,7 @@ def my_each_with_index
 end
 
 def my_select
-  arr = []
-    self.my_each { |i|
-    if yield(i)
-    arr.push(i) 
-    end
-      }
-    arr   
+    array = []
+    my_each { |i| array << i if yield(i) }
+    array  
 end
