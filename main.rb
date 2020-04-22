@@ -1,13 +1,15 @@
 def my_each
-  for element in self
-  yield(element)
-    end
+    index = 0
+    while index < self.length
+      yield(self[index])   
+        index+=1   
+    end 
 end
 
 def my_each_with_index
-    index = 0
-    for element in self
-        yield(element, index)
+  index = 0
+    while element in self
+      yield([index], index)
         index += 1
     end
 end
