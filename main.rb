@@ -53,3 +53,18 @@ def my_any?(param = nil)
   my_each { |x| return true unless yield(x) }
   false
 end
+
+def my_none?(block = nil)
+  if block_given?
+    my_each { |i| return false if yield(i) }
+  elsif block.class == Class
+    my_each { |i| return false if i.class == block }
+  elsif block.class == Regexp
+    my_each { |i| return false if i =~ block }
+  elsif block.nil?
+    my_each { |i| return false if i }
+  else
+    my_each { |i| return false if i == block }
+  end
+  true
+end
