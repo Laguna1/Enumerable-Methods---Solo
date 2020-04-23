@@ -31,12 +31,12 @@ end
 def my_all?(param = nil)
   unless block_given?
     if param = nil?
-      my_each { |i| return false unless arg == i }
+      my_each { |i| return false unless (param == i) }
     else
       my_each { |i| return false unless i }
     end
     return true
   end
-  my_each { |i| return false unless yield(i) }
+  my_each { |x| return false unless yield(x) }
   true
 end
