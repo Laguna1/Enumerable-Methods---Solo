@@ -30,8 +30,8 @@ end
 
 def my_all?(param = nil)
   unless block_given?
-    if param != nil
-      my_each { |i| return false unless arg === i }
+    if param = nil?
+      my_each { |i| return false unless arg == i }
     else
       my_each { |i| return false unless i }
     end
