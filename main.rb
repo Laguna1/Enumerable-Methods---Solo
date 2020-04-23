@@ -42,7 +42,3 @@ def my_all?(param = nil)
   end
   true
 end
-
-
-
-  
