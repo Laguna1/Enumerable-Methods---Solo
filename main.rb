@@ -29,16 +29,14 @@ def my_select
 end
 
 def my_all?(param = nil)
-  if block_given?
-    my_each { |i| return false unless yield(i) }
-  elsif param.class == Class
-    my_each { |i| return false unless i.class == param }
-  elsif param.class == Regexp
-    my_each { |i| return false unless i =~ param }
-  elsif param.nil?
-    my_each { |i| return false unless i }
-  else
-    my_each { |i| return false unless i == param }
+  unless block_given?
+    if param != nil
+      my_each { |i| return false unless arg === i }
+    else
+      my_each { |i| return false unless i }
+    end
+    return true
   end
+  my_each { |i| return false unless yield(i) }
   true
 end
