@@ -40,3 +40,16 @@ def my_all?(param = nil)
   my_each { |x| return false unless yield(x) }
   true
 end
+
+def my_any?(param = nil)
+  unless block_given?
+    if param == nil?
+      my_each { |i| return true unless param == i }
+    else
+      my_each { |i| return true unless i }
+    end
+    return false
+  end
+  my_each { |x| return true unless yield(x) }
+  false
+end
