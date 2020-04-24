@@ -67,3 +67,4 @@ def my_none?(param = true)
   end
   true
 end
+# rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
