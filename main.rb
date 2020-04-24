@@ -54,6 +54,7 @@ def my_any?(param = nil)
   false
 end
 
+# rubocop:disable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
 def my_none?(param = true)
   if block_given?
     each { |item| return false if yield(item) }
@@ -65,5 +66,4 @@ def my_none?(param = true)
     each { |item| return false if item == param }
   end
   true
-end
 end
