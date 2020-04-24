@@ -54,17 +54,16 @@ def my_any?(param = nil)
   false
 end
 
-def my_none?(param = nil)
-  return my_none?(param) if block_given? && !param.nil?
-
+def my_none?(param = true)
   if block_given?
-    to_a.my_each { |item| return false if yield(item) }
+    each { |item| return false if yield(item) }
   elsif param.is_a? Regexp
-    to_a.my_each { |item| return false if item.to_s.match(param) }
+    each { |item| return false if param.match(item) }
   elsif param.is_a? Class
-    to_a.my_each { |item| return false if item.is_a? param }
-  elsif param.nil?
-    to_a.my_each { |item| return false if item }
+    each { |item| return false if item.instance_of? param }
+  else
+    each { |item| return false if item == param }
   end
   true
+end
 end
