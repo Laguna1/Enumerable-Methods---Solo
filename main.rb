@@ -69,10 +69,10 @@ def my_none?(param = true)
 end
 # rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
 
-def my_count(arg = nil)
-  count = 0
-  my_each do |value|
-    block_given? ? (count += 1 if yield value) : (count += 1 if value == arg || arg.nil?)
-  end
-  count
+def my_map
+  return to_enum(:my_map) unless block_given?
+
+  new_array = []
+  to_a.my_each { |item| new_array << yield(item) }
+  new_array
 end
