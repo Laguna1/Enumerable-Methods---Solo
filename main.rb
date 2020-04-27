@@ -67,7 +67,6 @@ def my_none?(param = true)
   end
   true
 end
-# rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
 
 def my_map(proc = nil)
   return to_enum(:my_map) unless block_given?
@@ -99,6 +98,8 @@ def my_inject(*given)
   end
   injected
 end
+
+# rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
 
 def multiply_els(arr)
   arr.my_inject { |a, b| a * b }
