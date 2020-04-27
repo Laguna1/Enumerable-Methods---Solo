@@ -69,10 +69,10 @@ def my_none?(param = true)
 end
 # rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
 
-def my_map
+def my_map(proc = nil)
   return to_enum(:my_map) unless block_given?
 
-  new_array = []
-  to_a.my_each { |item| new_array << yield(item) }
-  new_array
+  array = []
+  proc ? my_each { |x| array << proc.call(x) } : my_each { |x| array << yield(x) }
+  array
 end
