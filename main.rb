@@ -68,3 +68,11 @@ def my_none?(param = true)
   true
 end
 # rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
+
+def my_count(arg = nil)
+  count = 0
+  my_each do |value|
+    block_given? ? (count += 1 if yield value) : (count += 1 if value == arg || arg.nil?)
+  end
+  count
+end
