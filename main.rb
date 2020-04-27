@@ -76,3 +76,36 @@ def my_map(proc = nil)
   proc ? my_each { |x| array << proc.call(x) } : my_each { |x| array << yield(x) }
   array
 end
+
+def my_inject(*given)
+  arr = to_a.dup
+  if given[0].nil?
+    injected = arr.shift
+  elsif given[1].nil? && !block_given?
+    sym = given[0]
+    injected = arr.shift
+  elsif given[1].nil? && block_given?
+    injected = given[0]
+  else
+    injected = given[0]
+    sym = given[1]
+  end
+  arr[0..-1].my_each do |item|
+    injected = if sym
+                 injected.send(sym, item)
+               else
+                 yield(injected, item)
+               end
+  end
+  injected
+end
+
+def multiply_els(arr)
+  arr.my_inject { |a, b| a * b }
+end
+
+puts multiply_els([2, 4, 5])
+
+a = [16, 8, 3, 6]
+my_proc = proc { |num| num + 7 }
+puts a.my_map(my_proc) { |num| num + 7 }
