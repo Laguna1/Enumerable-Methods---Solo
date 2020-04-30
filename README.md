@@ -40,7 +40,7 @@ Clone or Download [this repository](https://github.com/Laguna1/Enumerable-Method
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Laguna1/Bubble-Sort/issues).
+Feel free to check the [issues page](https://github.com/Laguna1/Enumerable-Methods---Solo/issues).
 
 ## Show your support
 
