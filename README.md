@@ -21,3 +21,27 @@
  - my_count
  - my_map
  - my_inject
+ 
+ ## Getting Started
+
+Clone or Download [this repository](https://github.com/Laguna1/Enumerable-Methods---Solo.git) and open .rb file in your Code Editor
+
+## Author
+
+
+👤 **Oksana Petrova**
+
+- GitHub:[@github/Laguna1](https://github.com/Laguna1)
+- Linkedin:[linkedin/OksanaPetrova](https://www.linkedin.com/in/oksana-petrova-005bb0145/)
+
+
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/Laguna1/Bubble-Sort/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
