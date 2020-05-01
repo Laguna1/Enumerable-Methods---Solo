@@ -110,3 +110,7 @@ puts multiply_els([2, 4, 5])
 a = [16, 8, 3, 6]
 my_proc = proc { |num| num + 7 }
 puts a.my_map(my_proc) { |num| num + 7 }
+
+print "only proc: #{[1, 2, 3].my_map(&my_proc)}\n"
+print "ignore block and use proc: #{[16, 8, 3, 6].my_map(my_proc) { |num| num + 7 }}\n"
+print "only block: #{[16, 8, 3, 6].my_map { |num| num + 7 }}\n"
