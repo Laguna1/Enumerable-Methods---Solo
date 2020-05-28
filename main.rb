@@ -53,7 +53,6 @@ module
     false
   end
 
-  # rubocop:disable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
   def my_none?(param = true)
     if block_given?
       each { |item| return false if yield(item) }
