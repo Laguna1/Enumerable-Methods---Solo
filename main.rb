@@ -1,5 +1,5 @@
-# rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
-module Enumerable
+module 
+  
   def my_each
     return to_enum unless block_given?
     index = 0
@@ -7,7 +7,7 @@ module Enumerable
       yield(self[index])
       index += 1
     end
-   # self
+    # self
   end
 
   def my_each_with_index
@@ -105,7 +105,7 @@ module Enumerable
      end
      injected
   end
-  
+
 end
 
   # rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
